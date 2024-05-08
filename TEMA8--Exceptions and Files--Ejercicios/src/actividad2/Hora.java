@@ -7,7 +7,7 @@ package actividad2;
  * 
  */
 public class Hora {
-
+	private int segundos;
 	private int hora;
 	private int minutos;
 
@@ -26,17 +26,23 @@ public class Hora {
 		return minutos;
 	}
 
-	public Hora(int hora, int minutos) {
+	public Hora(int hora, int minutos, int segundos)
+			throws NegativeHorasException, NegativeMinutosException, NegativeSegundosException {
 		if (hora >= 0 && hora <= 24) {
 			this.hora = hora;
 		} else {
-			this.hora = 0;
+			throw new NegativeHorasException("error constructor :");
 		}
 
 		if (minutos >= 0 && minutos <= 60) {
 			this.minutos = minutos;
 		} else {
-			this.minutos = 0;
+			throw new NegativeMinutosException("error constructor :");
+		}
+		if (segundos >= 0 && segundos <= 24) {
+			this.segundos = segundos;
+		} else {
+			throw new NegativeSegundosException("error constructor :");
 		}
 	}
 
@@ -53,22 +59,42 @@ public class Hora {
 		}
 	}
 
-	public boolean setMinutos(int valor) {
-		if (valor >= 0 && valor <= 60) {
-			minutos = valor;
-			return true;
+	public void setMinutos(int minutos) throws NegativeMinutosException {
+		if (minutos >= 0 && minutos <= 24) {
+			this.minutos = minutos;
 		} else {
-			return false;
+			throw new NegativeMinutosException("error setter:");
 		}
+
 	}
 
-	public boolean setHora(int valor) {
-		if (valor >= 0 && valor <= 24) {
-			hora = valor;
-			return true;
+	public void setHora(int hora) throws NegativeHorasException {
+		if (hora >= 0 && hora <= 24) {
+			this.hora = hora;
 		} else {
-			return false;
+			throw new NegativeHorasException("La hora no pueden ser negativa");
 		}
+
+	}
+
+	/**
+	 * @return the segundos
+	 */
+	public int getSegundos() {
+		return segundos;
+	}
+
+	/**
+	 * @param segundos the segundos to set
+	 * @throws NegativeNumeroException
+	 */
+	public void setSegundos(int segundos) throws NegativeSegundosException {
+		if (segundos >= 0 && segundos <= 24) {
+			this.segundos = segundos;
+		} else {
+			throw new NegativeSegundosException("error setter:");
+		}
+
 	}
 
 	public String toString() {
