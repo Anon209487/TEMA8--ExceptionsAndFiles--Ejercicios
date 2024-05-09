@@ -19,15 +19,15 @@ public class Producto {
 	 * @throws NombreException
 	 */
 	public Producto(String nombre, double precio) throws PrecioException, NombreException {
-		if (nombre != null && nombre != "") {
+		if (nombre != null && !nombre.equals("")) {
 			this.nombre = nombre;
 		} else {
-			throw new NombreException("error nombre");
+			throw new NombreException("");
 		}
 		if (precio > 0) {
 			this.precio = precio;
 		} else {
-			throw new PrecioException(" precio no puede ser negativo");
+			throw new PrecioException("");
 		}
 
 	}
@@ -53,10 +53,10 @@ public class Producto {
 	 * @throws NombreException
 	 */
 	public void setNombre(String nombre) throws NombreException {
-		if (nombre != null && nombre != "") {
+		if (nombre != null && !nombre.equals("")) {
 			this.nombre = nombre;
 		} else {
-			throw new NombreException("error nombre");
+			throw new NombreException("");
 		}
 	}
 
@@ -75,7 +75,7 @@ public class Producto {
 		if (precio > 0) {
 			this.precio = precio;
 		} else {
-			throw new PrecioException(" precio no puede ser negativo");
+			throw new PrecioException(" precio no puede ser negativo ");
 		}
 	}
 
