@@ -15,21 +15,21 @@ public class Producto {
 	 * 
 	 * @param nombre
 	 * @param precio
+	 * @throws PrecioException
+	 * @throws NombreException
 	 */
-	public Producto(String nombre, double precio) {
-		// TODO Auto-generated constructor stub
+	public Producto(String nombre, double precio) throws PrecioException, NombreException {
 		if (nombre != null && nombre != "") {
 			this.nombre = nombre;
+		} else {
+			throw new NombreException("error nombre");
 		}
 		if (precio > 0) {
 			this.precio = precio;
+		} else {
+			throw new PrecioException(" precio no puede ser negativo");
 		}
 
-	}
-
-	public String toString() {
-
-		return " nombre: " + nombre + " precio: " + precio;
 	}
 
 	public double calcular(int cantidadProductos) {
@@ -50,10 +50,13 @@ public class Producto {
 
 	/**
 	 * @param nombre the nombre to set
+	 * @throws NombreException
 	 */
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) throws NombreException {
 		if (nombre != null && nombre != "") {
 			this.nombre = nombre;
+		} else {
+			throw new NombreException("error nombre");
 		}
 	}
 
@@ -66,10 +69,13 @@ public class Producto {
 
 	/**
 	 * @param precio the precio to set
+	 * @throws PrecioException
 	 */
-	public void setPrecio(double precio) {
+	public void setPrecio(double precio) throws PrecioException {
 		if (precio > 0) {
 			this.precio = precio;
+		} else {
+			throw new PrecioException(" precio no puede ser negativo");
 		}
 	}
 
@@ -77,5 +83,10 @@ public class Producto {
 		Producto empleadoComparacion = (Producto) obj;
 		return this.getNombre().equals(empleadoComparacion.getNombre());
 
+	}
+
+	public String toString() {
+
+		return " nombre: " + nombre + " precio: " + precio;
 	}
 }
