@@ -28,13 +28,12 @@ public class Reader {
 
 				} else if (scanner.hasNextDouble()) {
 					numero = scanner.nextDouble();
-					System.out.print(numero + " ");
+				
 
 				} else {
-
 					scanner.next();
 				}
-				System.out.println(nombre + edad + numero);
+				System.out.print(nombre + edad + numero+" ");
 			}
 
 			System.out.println();
