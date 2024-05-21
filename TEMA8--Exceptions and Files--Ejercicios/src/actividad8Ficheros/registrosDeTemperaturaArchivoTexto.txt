@@ -1,0 +1,4 @@
+Fecha,Temperatura máxima,Temperatura mínima
+12    ,     4.0    ,     43.0
+3    ,     34.0    ,     23.0
+453    ,     354.0    ,     435.0
