@@ -4,7 +4,7 @@
 package actividad7Ficheros;
 
 /**
- * 
+ *  
  */
 public class Contacto {
 	private String nombre = "";
@@ -66,8 +66,7 @@ public class Contacto {
 	}
 
 	public String toString() {
-		String res = "nombre: " + nombre + "\n";
-		res += "telefono: " + telefono + "\n";
+		String res = nombre + ":" + telefono;
 		return res;
 	}
 

@@ -14,10 +14,10 @@ import actividad1.UtilsJava;
 		    public static void main(String[] args) {
 		        Scanner scanner = new Scanner(System.in);
 
-		        System.out.println("Por favor, introduce tu nombre:");
+		        System.out.println(" introduce tu nombre:");
 		        String nombre = scanner.nextLine();
 
-		        System.out.println("Ahora, por favor, introduce tu edad:");
+		        System.out.println("introduce tu edad:");
 		        int edad = scanner.nextInt();
 
 		        guardarDatos(nombre, edad);
@@ -47,7 +47,7 @@ import actividad1.UtilsJava;
 		            System.out.println("Datos guardados correctamente en datos.txt.");
 
 		        } catch (IOException e) {
-		            System.err.println("Error al guardar los datos: " + e.getMessage());
+		            System.err.println("Error : " + e.getMessage());
 		        }
 		    }
 		}

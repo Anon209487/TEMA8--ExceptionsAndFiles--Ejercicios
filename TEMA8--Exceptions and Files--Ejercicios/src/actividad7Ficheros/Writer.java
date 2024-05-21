@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Writer {
 	public static void guardarDatos(ArrayList<Contacto> contatos) {
+		String insetar = "numero:agenda";
 		try {
 			File archivo = new File("src/actividad7Ficheros/agenda.txt");
 			FileWriter fw;
@@ -19,7 +20,8 @@ public class Writer {
 			}
 
 			BufferedWriter bw = new BufferedWriter(fw);
-
+			bw.write(insetar);
+			bw.newLine();
 			for (Contacto contacto : contatos) {
 				bw.write(contacto.toString());
 				bw.newLine();

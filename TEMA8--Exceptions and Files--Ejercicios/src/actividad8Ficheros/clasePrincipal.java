@@ -6,7 +6,7 @@ public class clasePrincipal {
 
 	public static void main(String[] args) throws Exception {
 		int numeros = 0;
-
+		Reader.leeerTxt();
 		do {
 
 			numeros = menu();
@@ -47,7 +47,7 @@ public class clasePrincipal {
 	 */
 	private static int menu() {
 		int numeros;
-		System.out.println("slecionne:");
+		System.out.println("slecionar opcion:");
 		System.out.println("1 Registra nueva temperatura:");
 		System.out.println("2 Mostrar historial de registros:");
 		System.out.println("3 Salir:");
